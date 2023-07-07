@@ -36,7 +36,7 @@ class ComedyCalculator extends PerformanceCalculator {
   }
 
   get volumeCredits() {
-    return Math.floor(this.performance.audience / 5);
+    return super.volumeCredits + Math.floor(this.performance.audience / 5);
   }
 }
 
