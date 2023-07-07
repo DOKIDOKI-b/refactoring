@@ -4,6 +4,10 @@ class PerformanceCalculator {
     this.play = aPlay;
   }
 
+  get amount() {
+    throw new Error("서브클래스에서 처리되도록 설계되었습니다.");
+  }
+
   get volumeCredits() {
     return Math.max(this.performance.audience - 30, 0);
   }
