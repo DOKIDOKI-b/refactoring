@@ -1,13 +1,16 @@
 {
   "name": "refactoring",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node main.js",
-    "dev": "nodemon main.js"
+  "dependencies": {
+    "chai": "^4.3.4",
+    "dayjs": "^1.10.6",
+    "mocha": "^9.0.2",
+    "nodemon": "^2.0.7"
   },
-  "author": "",
-  "license": "ISC",
-  "type": "module"
+  "scripts": {
+    "start": "nodemon",
+    "test": "nodemon --exec 'mocha ${0}'"
+  }
 }
