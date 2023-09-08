@@ -1,11 +1,11 @@
 // 함수 추출하기
-export default interface Invoice {
+interface Invoice {
   orders: { amount: number }[];
   dueDate: Date;
   customer: string;
 }
 
-export const printOwing = (invoice: Invoice) => {
+const printOwing = (invoice: Invoice) => {
   // 미해결 채무
   let outstanding = 0;
 
@@ -35,3 +35,5 @@ const mrHundredinvoice = {
 };
 
 printOwing(mrHundredinvoice);
+
+export {};
