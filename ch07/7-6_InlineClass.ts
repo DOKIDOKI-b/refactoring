@@ -46,7 +46,7 @@ class Shipment {
   }
 }
 
-const client1 = () => {
+const client = () => {
   const vendor = new TrackingInformation({ shippingCompany: '아나벌써택배', trackingNumber: '5252-1004-20000' });
   const aShipment = new Shipment(vendor);
   aShipment.trackingInformation.shippingCompany = vendor.shippingCompany;
@@ -54,6 +54,6 @@ const client1 = () => {
   return aShipment.trackingInfo;
 };
 
-console.log(client1());
+console.log(client());
 
 export {};
