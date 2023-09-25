@@ -56,4 +56,9 @@ const client4 = () => {
       : customer.paymentHsitry.weeksDelinquentInLastYear;
 };
 
+const uniqueClient = () => {
+  const aCustomer = site.customer;
+  const name = !isUnkown(aCustomer) ? aCustomer.name : '미확인 거주자';
+};
+
 export {};
