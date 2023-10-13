@@ -1,5 +1,5 @@
 // 6-2-1
-export interface Driver {
+interface Driver {
   numberOfLateDeliveries: number;
 }
 
@@ -18,7 +18,7 @@ const taxiDriver = {
 console.log(rating(taxiDriver));
 
 // 6-2-2
-export interface Customer {
+interface Customer {
   name: string;
   location: string;
 }
@@ -40,3 +40,5 @@ const customer = {
 };
 
 console.log(reportLines(customer));
+
+export {};

@@ -9,7 +9,7 @@ type ModifiedReading = Omit<Reading, 'month'> & { month: Month };
 const acquireReading = () => ({
   customer: 'ivan',
   quantity: 10,
-  month: 5,
+  month: 5 as Month,
   year: 2017,
 });
 
@@ -17,7 +17,8 @@ const baseRate = (month: number, year: number) => year - 2000 + month;
 
 const client1 = () => {
   const aReading = acquireReading();
-  const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;
+  const baseCharge =
+    baseRate(aReading.month, aReading.year) * aReading.quantity;
   return baseCharge;
 };
 

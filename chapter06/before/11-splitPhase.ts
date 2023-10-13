@@ -1,3 +1,7 @@
+type ShippingMethod = typeof shippingMethod;
+
+type Product = (typeof products)[0];
+
 const products = [
   {
     name: 'samsung',
@@ -28,24 +32,29 @@ const shippingMethod = {
   feePerCase: 0.05,
 };
 
-type ShippingMethod = typeof shippingMethod;
-
-type Product = (typeof products)[0];
-
-const priceOrder = (product: Product, quantity: number, shippingMethod: ShippingMethod) => {
+const priceOrder = (
+  product: Product,
+  quantity: number,
+  shippingMethod: ShippingMethod
+) => {
   // 상품 정보 가격 계산
   const basePrice = product.basePrice * quantity;
-  const discount = Math.max(quantity - product.discountThreshold, 0) * product.basePrice * product.discountRate;
+  const discount =
+    Math.max(quantity - product.discountThreshold, 0) *
+    product.basePrice *
+    product.discountRate;
 
   // 배송 정보 이용 계산
   const shippingPerCase =
-    basePrice > shippingMethod.discountThreshold ? shippingMethod.discountFee : shippingMethod.feePerCase;
+    basePrice > shippingMethod.discountThreshold
+      ? shippingMethod.discountFee
+      : shippingMethod.feePerCase;
   const shippingCost = quantity * shippingPerCase;
   const price = basePrice - discount + shippingCost;
   return price;
 };
 
-products.forEach(product => {
+products.forEach((product) => {
   console.log(priceOrder(product, 30, shippingMethod));
 });
 

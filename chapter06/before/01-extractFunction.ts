@@ -20,7 +20,11 @@ const printOwing = (invoice: Invoice) => {
 
   // 마감 기록
   const today = new Date();
-  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+  invoice.dueDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate() + 30
+  );
 
   // 세부 사항 출력
   console.log(`고객명: ${invoice.customer}`);

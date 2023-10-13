@@ -31,7 +31,7 @@ const operatingPlan = {
 };
 
 const readingsOutsideRange = (station: Station, min: number, max: number) =>
-  station.readings.filter(r => r.temp < min || r.temp > max);
+  station.readings.filter((r) => r.temp < min || r.temp > max);
 
 console.log(
   readingsOutsideRange(

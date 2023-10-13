@@ -10,7 +10,7 @@ const circum = (radius: number) => {
  * 마이그레이션 (간단하지 않은 절차) : 매개변수 하나만 추가
  */
 
-export interface Customer {
+interface Customer {
   name: string;
   address?: {
     state: string;
@@ -74,9 +74,14 @@ const someCustomers = [
 ];
 
 const inNewEngland = (aCustomer: Customer) => {
-  return aCustomer?.address?.state && ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(aCustomer.address.state);
+  return (
+    aCustomer?.address?.state &&
+    ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(aCustomer.address.state)
+  );
 };
 
-const newEnglanders = someCustomers.filter(c => inNewEngland(c));
+const newEnglanders = someCustomers.filter((c) => inNewEngland(c));
 
 console.log(newEnglanders);
+
+export {};

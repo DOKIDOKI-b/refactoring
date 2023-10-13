@@ -20,4 +20,6 @@ const owner2 = defaultOwner;
 
 owner2.firstName = '변경되라 얍!';
 
-console.log(owner1.firstName !== owner2.firstName); // false, 둘이 같아져 버렸다.
+console.log(owner1.firstName === owner2.firstName); // true, 둘이 같아져 버렸다.
+
+export {};
