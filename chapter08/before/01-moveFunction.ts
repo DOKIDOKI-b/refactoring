@@ -1,26 +1,19 @@
 // p280 : 중첩 함수를 최상위로 옮기기
-export function trackSummary(points: Array<number>) {
-  function distance(p1: number, p2: number) {
-    return radians(p2) - radians(p1);
-  }
+function trackSummary(points: Array<number>) {
+  const distance = (p1: number, p2: number) => radians(p2) - radians(p1);
 
-  function calculateTime() {
-    return 60;
-  }
+  const calculateTime = () => 60;
 
-  function radians(degree: number) {
-    return 90;
-  }
+  const radians = (degree: number) => 90;
 
-  function calculateDistance(points: Array<number>) {
+  const calculateDistance = (points: Array<number>) => {
     let result = 0;
     for (let i = 1; i < points.length; i++) {
       result += distance(points[i - 1], points[i]);
     }
     return result;
-  }
+  };
 
-  // 정말 확실하다 or 2차원배열 -> number[];
   const totalTime = calculateTime();
   const totalDistance = calculateDistance(points);
   const pace = totalTime / 60 / totalDistance;
@@ -39,7 +32,7 @@ interface TypeProps {
 }
 
 // p285 : 다른 클래스로 옮기기
-export class Account {
+class Account {
   _daysOverdrawn;
   type;
 
@@ -63,3 +56,5 @@ export class Account {
     return this._daysOverdrawn * 1.75;
   }
 }
+
+export {};

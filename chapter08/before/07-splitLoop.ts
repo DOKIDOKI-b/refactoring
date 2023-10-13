@@ -1,9 +1,6 @@
-interface Person {
-  age: number;
-  salary: number;
-}
+type Person = (typeof PEOPLE)[0];
 
-const PEOPLE: Array<Person> = [
+const PEOPLE = [
   { age: 24, salary: 2800 },
   { age: 27, salary: 4000 },
   { age: 30, salary: 5000 },
@@ -11,7 +8,7 @@ const PEOPLE: Array<Person> = [
   { age: 40, salary: 7000 },
 ];
 
-const getInfos = (people: Array<Person>) => {
+const getInfos = (people: Person[]) => {
   let youngest = people[0] ? people[0].age : Infinity;
   let totalSalary = 0;
   for (const p of people) {
@@ -22,3 +19,5 @@ const getInfos = (people: Array<Person>) => {
 };
 
 console.log(getInfos(PEOPLE));
+
+export {};

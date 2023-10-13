@@ -12,10 +12,8 @@ const retrieveOrder = () => ({
 
 const chargeOrder = (arg: number | string) => console.log(arg);
 
-// pringcingPlan : 가격정책
-// retrieve 가져오기
 const pricingPlan = retrievePricingPlan();
-const order = retrieveOrder();
+const order = retrieveOrder(); // retrieve 가져오기
 const baseCharge = pricingPlan.baseCharge;
 let charge;
 const chargePerUnit = pricingPlan.units;
@@ -27,3 +25,30 @@ discount = discountableUnits * pricingPlan.discountFactor;
 if (order.isRepeat) discount += 20;
 charge = charge - discount;
 chargeOrder(charge);
+
+/**
+ * @page : 314
+ * 예시 : 조건문이 있을 때의 슬라이드
+ */
+
+const createResource = () => ({});
+
+const availableResources: Array<unknown> = [];
+
+const allocatedResources = [];
+
+const foo = () => {
+  let result;
+  if (availableResources.length === 0) {
+    result = createResource();
+    allocatedResources.push(result);
+  } else {
+    result = availableResources.pop();
+    allocatedResources.push(result);
+  }
+  return result;
+};
+
+console.log(foo());
+
+export {};

@@ -8,7 +8,7 @@ class Customer {
   _discountRate;
   _contract;
 
-  constructor(name:string, discountRate: number)  {
+  constructor(name: string, discountRate: number) {
     this._name = name;
     this._discountRate = discountRate;
     this._contract = new CustomerContract(new Date());
@@ -36,3 +36,5 @@ class CustomerContract {
 const customer = new Customer('현영', 0.5);
 customer.becomePreferred();
 console.log(customer.discountRate);
+
+export {};

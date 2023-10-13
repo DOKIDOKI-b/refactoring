@@ -1,6 +1,6 @@
 interface AcquireData {
   city: string;
-  phone: string | number;
+  phone: string;
 }
 
 const CSV = `office, country, telephone
