@@ -1,3 +1,7 @@
+/**
+ * @page : 331
+ */
+
 // acc에 값을 2번 대입함 -> 역할이 두개라는 신호
 type Scenario = typeof scenario;
 
@@ -24,3 +28,19 @@ const scenario = {
 };
 
 console.log(distanceTravelled(scenario, 10));
+
+/**
+ * @page : 333
+ * 입력 매개변수의 값을 수정할 때
+ */
+
+const discount = (inputValue: number, quantity: number) => {
+  if (inputValue > 50) inputValue = inputValue - 2;
+  if (quantity > 100) inputValue = inputValue - 1;
+  return inputValue;
+};
+console.log(discount(40, 100));
+console.log(discount(70, 150));
+console.log(discount(70, 50));
+
+export {};
