@@ -24,9 +24,9 @@ const employee = {
   isRetired: false,
 };
 
-//
+console.log(payAmount(employee));
 
-function adjustedCapital(anInstrument: typeof instrumnet) {
+const adjustedCapital = (anInstrument: typeof instrumnet) => {
   let result = 0;
   if (anInstrument.capital > 0) {
     if (anInstrument.interestRate > 0 && anInstrument.duration > 0) {
@@ -37,7 +37,7 @@ function adjustedCapital(anInstrument: typeof instrumnet) {
   }
 
   return result;
-}
+};
 
 const instrumnet = {
   capital: 1,
@@ -46,5 +46,7 @@ const instrumnet = {
   adjustmentFactor: 4,
   income: 5,
 };
+
+console.log(adjustedCapital(instrumnet).toFixed(2));
 
 export {};

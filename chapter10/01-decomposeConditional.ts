@@ -1,3 +1,5 @@
+import { formatToday } from '../utils/formatToday';
+
 // Decompose Conditional
 const isBefore = (date1: Date, date2: Date) => {
   const d1 = new Date(date1);
@@ -13,7 +15,7 @@ const isAfter = (date1: Date, date2: Date) => {
 
 const plan = {
   summerStart: new Date('2023-06-01'),
-  summerEnd: new Date('2021-09-31'),
+  summerEnd: new Date('2023-09-31'),
   summerRate: 5,
   regularRate: 5,
   regularServiceCharge: 100,
@@ -24,7 +26,11 @@ const discountRate = (quantity: number, aDate: Date) => {
     return quantity * plan.summerRate;
   return quantity * plan.regularRate + plan.regularServiceCharge;
 };
-console.log(discountRate(10, new Date('2021-06-29')));
-console.log(discountRate(10, new Date('2021-08-15')));
+
+const TODAY = new Date(formatToday());
+const MY_BIRTHDAY = new Date('1994-12-10');
+
+console.log(discountRate(10, new Date(TODAY)));
+console.log(discountRate(10, new Date(MY_BIRTHDAY)));
 
 export {};
