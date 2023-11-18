@@ -14,7 +14,7 @@ function alertForMiscreants(people: string[]) {
     }
   }
 
-  return;
+  return '';
 }
 
 export {};
